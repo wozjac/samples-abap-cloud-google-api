@@ -1,0 +1,14 @@
+---
+version: 1
+applications:
+  - name: jwt-backend
+    memory: 128M
+    path: jwt-backend
+    routes:
+      - route: jwt-backend.cfapps.us10.hana.ondemand.com
+    instances: 1
+    command: node index.js
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - jwt-backend-xsuaa
