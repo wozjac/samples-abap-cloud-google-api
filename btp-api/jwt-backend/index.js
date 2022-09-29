@@ -16,12 +16,13 @@ app.get("/sign", sign);
 function sign(req, res, next) {
   const privateKeyId = process.env.JWT_BACKEND_KEY_ID;
   const clientEmail = process.env.JWT_BACKEND_CLIENT_EMAIL;
-  const privateKey = process.env.JWT_BACKEND_PRIVATE_KEY.replace(/\\n/gm, "\n");
+  const privateKey = process.env.JWT_BACKEND_PRIVATE_KEY;
 
   if (!privateKey || !clientEmail || !privateKeyId) {
-    console.error(error);
     res.status(500).send("Missing values from environment variables");
   } else {
+    privateKey = privateKey.replace(/\\n/gm, "\n");
+
     const payload = {
       iss: clientEmail,
       sub: clientEmail,
