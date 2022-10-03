@@ -1,6 +1,6 @@
 " See https://jacekw.dev/blog/2022/google-cloud-api-call-from-abap-cloud-environment/
 " Implementend & test on SAP BTP ABAP Environment 2022, free tier
-CLASS zcl_google_api_jwt DEFINITION PUBLIC FINAL CREATE PUBLIC.
+CLASS zcl_google_api_via_btp DEFINITION PUBLIC FINAL CREATE PUBLIC.
   PUBLIC SECTION.
     INTERFACES if_oo_adt_classrun.
 
@@ -20,7 +20,7 @@ CLASS zcl_google_api_jwt DEFINITION PUBLIC FINAL CREATE PUBLIC.
                                          cx_http_dest_provider_error.
 ENDCLASS.
 
-CLASS zcl_google_api_jwt IMPLEMENTATION.
+CLASS zcl_google_api_via_btp IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
 
