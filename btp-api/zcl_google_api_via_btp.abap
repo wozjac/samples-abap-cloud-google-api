@@ -122,27 +122,25 @@ CLASS zcl_google_api_via_btp IMPLEMENTATION.
 
   METHOD get_signed_jwt_by_arrangement.
 
-    " Call Google API using a communication arrangement
-
-    DATA(scenario_id) = 'ZGOOGLE_API'.
+    DATA(communication_system) = 'JWT_SIGNER'.
     DATA(arrangement_factory) = cl_com_arrangement_factory=>create_instance( ).
 
-    DATA(scenario_range) = VALUE if_com_scenario_factory=>ty_query-cscn_id_range(
-      ( sign = 'I' option = 'EQ' low = scenario_id ) ).
+    DATA(comm_arrangement_range) = VALUE if_com_arrangement_factory=>ty_query-cs_id_range(
+      ( sign = 'I' option = 'EQ' low = communication_system ) ).
 
     arrangement_factory->query_ca(
       EXPORTING
-        is_query = VALUE #( cscn_id_range = scenario_range )
+        is_query = VALUE #( cs_id_range = comm_arrangement_range )
       IMPORTING
         et_com_arrangement = DATA(arrangements) ).
 
     DATA(arrangement) = arrangements[ 1 ].
 
     DATA(destination) = cl_http_destination_provider=>create_by_comm_arrangement(
-      comm_scenario  = CONV #( scenario_id )
+      comm_scenario  = 'ZGOOGLE_API'
       service_id     = 'ZGOOGLE_API_REST'
       comm_system_id = arrangement->get_comm_system_id( ) ).
-
+      
     DATA(http_client) = cl_web_http_client_manager=>create_by_http_destination( destination ).
     DATA(request) = http_client->get_http_request( ).
     DATA(json_body) = '{ "endpoint": "https://cloudresourcemanager.googleapis.com/" }'.
