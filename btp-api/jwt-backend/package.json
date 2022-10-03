@@ -1,12 +1,11 @@
 {
   "name": "jwt-backend",
   "version": "1.0.0",
-  "description": "Simple JWT backend for SAP BTP",
+  "description": "Simple backend for signing JWTs for SAP BTP Cloud Foundry environment",
   "main": "index.js",
   "author": "Jacek Woźniczak <wozjac@zoho.com>",
   "license": "MIT",
   "dependencies": {
-    "@sap/approuter": "^11.5.0",
     "@sap/xsenv": "^3.3.2",
     "@sap/xssec": "^3.2.13",
     "express": "^4.18.1",
