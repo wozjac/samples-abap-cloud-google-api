@@ -1,0 +1,18 @@
+apiVersion: gateway.kyma-project.io/v1beta1
+kind: APIRule
+metadata:
+  name: jwt-backend-api-apirule
+  namespace: jwt-backend-api
+spec:
+  gateway: kyma-system/kyma-gateway
+  host: jwt-backend-api.c-531ecbb.kyma.ondemand.com
+  rules:
+    - accessStrategies:
+        - config:
+          handler: oauth2_introspection
+      methods:
+        - GET
+      path: /.*
+  service:
+    name: jwt-backend-api-service
+    port: 5000

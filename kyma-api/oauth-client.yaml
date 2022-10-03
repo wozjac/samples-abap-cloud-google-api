@@ -1,0 +1,10 @@
+apiVersion: hydra.ory.sh/v1alpha1
+kind: OAuth2Client
+metadata:
+  name: jwt-backend-api-client
+  namespace: jwt-backend-api
+spec:
+  grantTypes:
+    - "client_credentials"
+  scope: "sign"
+  secretName: jwt-backend-api-client
