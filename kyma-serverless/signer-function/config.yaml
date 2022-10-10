@@ -1,0 +1,23 @@
+apiVersion: serverless.kyma-project.io/v1alpha2
+kind: Function
+name: jwt-backend-function
+namespace: jwt-backend-serverless
+runtime: nodejs14
+source:
+  sourceType: inline
+env:
+  - name: JWT_BACKEND_KEY_ID
+    valueFrom:
+      secretKeyRef:
+        name: jwt-backend-api-secret
+        key: PRIVATE_KEY_ID
+  - name: JWT_BACKEND_CLIENT_EMAIL
+    valueFrom:
+      secretKeyRef:
+        name: jwt-backend-api-secret
+        key: CLIENT_EMAIL
+  - name: JWT_BACKEND_PRIVATE_KEY
+    valueFrom:
+      secretKeyRef:
+        name: jwt-backend-api-secret
+        key: PRIVATE_KEY

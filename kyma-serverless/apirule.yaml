@@ -1,0 +1,18 @@
+apiVersion: gateway.kyma-project.io/v1beta1
+kind: APIRule
+metadata:
+  name: jwt-backend-function-apirule
+  namespace: jwt-backend-serverless
+spec:
+  gateway: kyma-system/kyma-gateway
+  host: jwt-backend-function.c-531ecbb.kyma.ondemand.com
+  rules:
+    - accessStrategies:
+        - config:
+          handler: oauth2_introspection
+      methods:
+        - GET
+      path: /.*
+  service:
+    name: jwt-backend-function
+    port: 80

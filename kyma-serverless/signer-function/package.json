@@ -1,0 +1,7 @@
+{
+  "name": "jwt-backend-function",
+  "version": "0.0.1",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
+}

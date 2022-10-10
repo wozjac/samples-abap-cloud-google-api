@@ -4,3 +4,4 @@ This is sample code from the articles:
 
 - Cloud Foundry app: <https://jacekw.dev/blog/2022/google-cloud-api-call-from-abap-cloud-environment/>
 - Kyma Runtime - backend API: <https://jacekw.dev/blog/2022/google-cloud-api-call-from-abap-cloud-with-kyma/>
+- Kyma Runtime - serverless Function <https://jacekw.dev/blog/2022/google-cloud-api-call-from-abap-cloud-with-kyma-serverless/>
