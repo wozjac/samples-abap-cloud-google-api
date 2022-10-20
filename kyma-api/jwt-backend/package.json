@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple backend for signing JWT for SAP BTP, Kyma Environment (k8s service way)",
   "author": "Jacek Woźniczak <wozjac@zoho.com>",
-  "license": "MIT",
+  "license": "Unlicense",
   "scripts": {
     "start": "node index.js"
   },
