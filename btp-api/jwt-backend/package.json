@@ -4,7 +4,7 @@
   "description": "Simple backend for signing JWTs for SAP BTP Cloud Foundry environment",
   "main": "index.js",
   "author": "Jacek Woźniczak <wozjac@zoho.com>",
-  "license": "MIT",
+  "license": "Unlicense",
   "dependencies": {
     "@sap/xsenv": "^3.3.2",
     "@sap/xssec": "^3.2.13",
